@@ -85,7 +85,6 @@ const LoginPage = ({ setUser }) => {
             id="email"
             register={register("email")}
             disabled={loading}
-            error={errors.email}
           />
           {errors.email && (
             <SText
@@ -106,7 +105,6 @@ const LoginPage = ({ setUser }) => {
             id="password"
             register={register("password")}
             disabled={loading}
-            error={errors.password}
           />
           {errors.password && (
             <SText

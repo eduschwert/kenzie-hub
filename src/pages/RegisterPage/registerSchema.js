@@ -28,4 +28,5 @@ export const registerSchema = yup.object().shape({
     .oneOf([yup.ref("password"), null], "As senhas não conferem."),
   bio: yup.string().required("A biografia é obrigatória!"),
   contact: yup.string().required("Número de contato é obrigatório!"),
+  course_module: yup.string().required("A seleção do módulo é obrigatória!"),
 })

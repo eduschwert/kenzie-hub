@@ -6,21 +6,20 @@ import { registerSchema } from "./registerSchema"
 
 import { toast } from "react-toastify"
 
+import { TailSpin } from "react-loader-spinner"
+
 import { useNavigate } from "react-router-dom"
 
 import { api } from "../../services"
 
 import { ContainerRegister } from "../../styles/Container"
-
 import { SText, STitle } from "../../styles/typography"
 import { SButton, SLink } from "../../styles/Buttons"
 import { SDivInputGroup, SFormBox } from "../../styles/form"
-
 import { SHeader } from "../../styles/Header"
-import Input from "../../components/Input"
-import Select from "../../components/Select"
+import { SSelect } from "./style"
 
-import { TailSpin } from "react-loader-spinner"
+import Input from "../../components/Input"
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState(false)
@@ -91,7 +90,6 @@ const RegisterPage = () => {
             id="name"
             register={register("name")}
             disabled={loading}
-            error={errors.name}
           />
           {errors.name && (
             <SText
@@ -112,7 +110,6 @@ const RegisterPage = () => {
             id="email"
             register={register("email")}
             disabled={loading}
-            error={errors.email}
           />
           {errors.email && (
             <SText
@@ -133,7 +130,6 @@ const RegisterPage = () => {
             id="password"
             register={register("password")}
             disabled={loading}
-            error={errors.password}
           />
           {errors.password && (
             <SText
@@ -154,7 +150,6 @@ const RegisterPage = () => {
             id="passwordConfirm"
             register={register("passwordConfirm")}
             disabled={loading}
-            error={errors.passwordConfirm}
           />
           {errors.passwordConfirm && (
             <SText
@@ -175,7 +170,6 @@ const RegisterPage = () => {
             id="bio"
             register={register("bio")}
             disabled={loading}
-            error={errors.bio}
           />
           {errors.bio && (
             <SText
@@ -196,7 +190,6 @@ const RegisterPage = () => {
             id="contact"
             register={register("contact")}
             disabled={loading}
-            error={errors.contact}
           />
           {errors.contact && (
             <SText
@@ -210,12 +203,40 @@ const RegisterPage = () => {
               {errors.contact.message}
             </SText>
           )}
-          <Select
-            label="Selecionar módulo"
-            id="course_module"
-            register={register("course_module")}
-            disabled={loading}
-          />
+          <SSelect>
+            <label htmlFor="course_module">Selecionar módulo</label>
+            <select
+              id="course_module"
+              {...register("course_module")}
+              disabled={loading}
+            >
+              <option value="">Selecionar módulo</option>
+              <option value="Primeiro módulo (Introdução ao Frontend)">
+                Primeiro módulo
+              </option>
+              <option value="Segundo módulo (Frontend avançado)">
+                Segundo módulo
+              </option>
+              <option value="Terceiro módulo (Introdução ao Backend)">
+                Terceiro módulo
+              </option>
+              <option value="Quarto módulo (Backend avançado)">
+                Quarto módulo
+              </option>
+            </select>
+          </SSelect>
+          {errors.course_module && (
+            <SText
+              tag="p"
+              fontSize="1.4rem"
+              fontWeigth="400"
+              color="var(--color-negative)"
+              marginBottom="-1rem"
+              marginTop="-2rem"
+            >
+              {errors.course_module.message}
+            </SText>
+          )}
         </SDivInputGroup>
         <SButton
           disabled={loading}

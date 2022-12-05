@@ -1,11 +1,11 @@
 import React from "react"
+
 import { useNavigate } from "react-router-dom"
 
 import { ContainerDashboard } from "../../styles/Container"
 
 import { SHeader } from "../../styles/Header"
 import { SDivUserInformationsBox } from "./style"
-
 import { SText, STitle } from "../../styles/typography"
 import { SButton } from "../../styles/Buttons"
 

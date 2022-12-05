@@ -2,11 +2,17 @@ import React from "react"
 
 import { SInput } from "./style.js"
 
-const Input = ({ id, label, type, placeholder, register, error }) => {
+const Input = ({ id, label, type, placeholder, register, disabled }) => {
   return (
-    <SInput error={error}>
+    <SInput>
       <label htmlFor={id}>{label}</label>
-      <input id={id} type={type} placeholder={placeholder} {...register} />
+      <input
+        id={id}
+        disabled={disabled}
+        type={type}
+        placeholder={placeholder}
+        {...register}
+      />
     </SInput>
   )
 }
