@@ -66,7 +66,7 @@ const LoginPage = ({ setUser }) => {
       >
         Kenzie Hub
       </STitle>
-      <SFormBox onSubmit={handleSubmit(submit)} noValidate marginBottom="2rem">
+      <SFormBox onSubmit={handleSubmit(submit)} noValidate>
         <STitle
           tag="h2"
           fontSize="1.8rem"
@@ -152,7 +152,8 @@ const LoginPage = ({ setUser }) => {
           to="/register"
           buttontype="primary"
           buttoncolor="grey-1"
-          marginBottom="4.2rem"
+          marginbottom="4.2rem"
+          width="98.5%"
         >
           Cadastre-se
         </SLink>

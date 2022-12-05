@@ -80,7 +80,7 @@ export const SLink = styled(Link)`
   justify-content: center;
   align-items: center;
 
-  margin-bottom: ${({ marginBottom }) => marginBottom};
+  margin-bottom: ${({ marginbottom }) => marginbottom};
 
   width: ${({ width }) => width};
 
