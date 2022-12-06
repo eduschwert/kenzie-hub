@@ -1,9 +1,9 @@
 import React from "react"
 
 import { useNavigate } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 
 import { ContainerDashboard } from "../../styles/Container"
-
 import { SHeader } from "../../styles/Header"
 import { SDivUserInformationsBox } from "./style"
 import { SText, STitle } from "../../styles/typography"
@@ -18,7 +18,7 @@ const DashboardPage = ({ user, setUser }) => {
     setUser(null)
     navigate("/")
   }
-  return (
+  return user ? (
     <>
       <ContainerDashboard>
         <SHeader marginTop="2rem" marginBottom="2rem">
@@ -80,6 +80,8 @@ const DashboardPage = ({ user, setUser }) => {
         </SText>
       </ContainerDashboard>
     </>
+  ) : (
+    <Navigate to="/" />
   )
 }
 
