@@ -9,7 +9,7 @@ import { SDivUserInformationsBox } from "./style"
 import { SText, STitle } from "../../styles/typography"
 import { SButton } from "../../styles/Buttons"
 
-const DashboardPage = ({ user, setUser }) => {
+const DashboardPage = ({ user, setUser, loading }) => {
   const navigate = useNavigate()
 
   const logout = () => {
@@ -18,6 +18,11 @@ const DashboardPage = ({ user, setUser }) => {
     setUser(null)
     navigate("/")
   }
+
+  if (loading) {
+    return null
+  }
+
   return user ? (
     <>
       <ContainerDashboard>
