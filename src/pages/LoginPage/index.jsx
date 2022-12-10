@@ -1,15 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
+import { useContext } from "react"
 
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 
 import { loginSchema } from "./loginSchema"
 
-import { toast } from "react-toastify"
-
-import { useNavigate } from "react-router-dom"
-
-import { api } from "../../services"
+import { UserContext } from "../../contexts/UserContext"
 
 import { ContainerLogin } from "../../styles/Container"
 import { SText, STitle } from "../../styles/typography"
@@ -20,9 +17,9 @@ import Input from "../../components/Input"
 
 import { TailSpin } from "react-loader-spinner"
 
-const LoginPage = ({ setUser }) => {
-  const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
+const LoginPage = () => {
+  const { login, loading } = useContext(UserContext)
+
   const {
     register,
     handleSubmit,
@@ -31,26 +28,6 @@ const LoginPage = ({ setUser }) => {
     mode: "onBlur",
     resolver: yupResolver(loginSchema),
   })
-
-  const submit = async (formData) => {
-    try {
-      setLoading(true)
-
-      const response = await api.post("sessions", formData)
-
-      setUser(response.data.user)
-      localStorage.setItem("@TOKEN", response.data.token)
-      localStorage.setItem("@USERID", response.data.user.id)
-
-      toast.success("Login efetuado com sucesso!")
-
-      navigate("/dashboard")
-    } catch (error) {
-      toast.error("Email ou senha incorretos")
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return (
     <ContainerLogin>
@@ -65,7 +42,7 @@ const LoginPage = ({ setUser }) => {
       >
         Kenzie Hub
       </STitle>
-      <SFormBox onSubmit={handleSubmit(submit)} noValidate>
+      <SFormBox onSubmit={handleSubmit(login)} noValidate>
         <STitle
           tag="h2"
           fontSize="1.8rem"

@@ -36,4 +36,12 @@ export const ContainerDashboard = styled(Container)`
   display: ${({ display }) => display};
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
+
+  position: ${({ position }) => position};
+  top: ${({ top }) => top};
+
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `

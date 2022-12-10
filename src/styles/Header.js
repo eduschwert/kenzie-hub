@@ -9,4 +9,11 @@ export const SHeader = styled.header`
 
   margin-bottom: ${({ marginBottom }) => marginBottom};
   margin-top: ${({ marginTop }) => marginTop};
+
+  margin: ${({ margin }) => margin};
+
+  width: ${({ width }) => width};
+  max-width: ${({ maxWidth }) => maxWidth};
+
+  height: ${({ height }) => height};
 `

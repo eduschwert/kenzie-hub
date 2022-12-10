@@ -8,4 +8,13 @@ export const SDivUserInformationsBox = styled.div`
 
   display: flex;
   align-items: center;
+
+  margin-top: 7.2rem;
+  margin-bottom: 3rem;
+`
+
+export const SDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `

@@ -1,16 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
+import { useContext } from "react"
 
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { registerSchema } from "./registerSchema"
 
-import { toast } from "react-toastify"
-
 import { TailSpin } from "react-loader-spinner"
-
-import { useNavigate } from "react-router-dom"
-
-import { api } from "../../services"
 
 import { ContainerRegister } from "../../styles/Container"
 import { SText, STitle } from "../../styles/typography"
@@ -21,9 +16,11 @@ import { SSelect } from "./style"
 
 import Input from "../../components/Input"
 
+import { UserContext } from "../../contexts/UserContext"
+
 const RegisterPage = () => {
-  const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
+  const { loading, register: registerSubmit } = useContext(UserContext)
+
   const {
     register,
     handleSubmit,
@@ -32,19 +29,6 @@ const RegisterPage = () => {
     mode: "onBlur",
     resolver: yupResolver(registerSchema),
   })
-
-  const submit = async (formData) => {
-    try {
-      setLoading(true)
-      await api.post("users", formData)
-      navigate("/")
-      toast.success("Conta criada com sucesso!")
-    } catch (error) {
-      toast.error("Ops! Algo deu errado")
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return (
     <ContainerRegister>
@@ -61,7 +45,11 @@ const RegisterPage = () => {
           Voltar
         </SLink>
       </SHeader>
-      <SFormBox onSubmit={handleSubmit(submit)} noValidate marginBottom="2rem">
+      <SFormBox
+        onSubmit={handleSubmit(registerSubmit)}
+        noValidate
+        marginBottom="2rem"
+      >
         <STitle
           tag="h2"
           fontSize="1.8rem"

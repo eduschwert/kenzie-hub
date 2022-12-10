@@ -1,32 +1,36 @@
 import React from "react"
+import { useContext } from "react"
 
-import { useNavigate } from "react-router-dom"
-import { Navigate } from "react-router-dom"
+import { AiOutlinePlus } from "react-icons/ai"
+
+import { UserContext } from "../../contexts/UserContext"
+
+import Modal from "../../components/Modal"
 
 import { ContainerDashboard } from "../../styles/Container"
 import { SHeader } from "../../styles/Header"
-import { SDivUserInformationsBox } from "./style"
+import { SDiv, SDivUserInformationsBox } from "./style"
 import { SText, STitle } from "../../styles/typography"
 import { SButton } from "../../styles/Buttons"
+import { useState } from "react"
 
-const DashboardPage = ({ user, setUser, loading }) => {
-  const navigate = useNavigate()
+const DashboardPage = () => {
+  const { logout, loading, user } = useContext(UserContext)
 
-  const logout = () => {
-    localStorage.removeItem("@TOKEN")
-    localStorage.removeItem("@USERID")
-    setUser(null)
-    navigate("/")
-  }
+  const [modal, setModal] = useState(true)
 
-  if (loading) {
-    return null
-  }
-
-  return user ? (
+  console.log(user)
+  return (
     <>
-      <ContainerDashboard>
-        <SHeader marginTop="2rem" marginBottom="2rem">
+      {modal && <Modal>oi</Modal>}
+      <ContainerDashboard
+        position="fixed"
+        top="0"
+        width="100%"
+        height="7.2rem"
+        backgroundColor="var(--color-grey-4)"
+      >
+        <SHeader margin="0 auto" width="80rem" maxWidth="100%" height="100%">
           <STitle
             tag="h1"
             fontSize="2rem"
@@ -65,28 +69,39 @@ const DashboardPage = ({ user, setUser, loading }) => {
         </ContainerDashboard>
       </SDivUserInformationsBox>
       <ContainerDashboard>
-        <STitle
-          tag="h3"
-          fontSize="1.8rem"
-          fontWeigth="700"
-          color="var(--color-grey-0)"
-          marginTop="3.7rem"
-          marginBottom="2.3rem"
-        >
-          Que pena! Estamos em desenvolvimento :(
-        </STitle>
-        <SText
-          tag="p"
-          fontSize="1.6rem"
-          fontWeigth="400"
-          color="var(--color-white)"
-        >
-          Nossa aplicação está em desenvolvimento, em breve teremos novidades
-        </SText>
+        <SDiv>
+          <STitle
+            tag="h3"
+            fontSize="1.6rem"
+            fontWeigth="600"
+            color="var(--color-grey-0)"
+          >
+            Tecnologias
+          </STitle>
+          <SButton buttontype="plus">
+            <AiOutlinePlus />
+          </SButton>
+        </SDiv>
+        {user.techs.length === 0 ? (
+          <>
+            <STitle
+              tag="h4"
+              fontSize="1.8rem"
+              fontWeigth="700"
+              color="var(--color-grey-0)"
+              marginTop="3.7rem"
+              marginBottom="2.3rem"
+            >
+              Nenhuma tecnologia cadastrada
+            </STitle>
+          </>
+        ) : (
+          <>
+            <h1>Techs</h1>
+          </>
+        )}
       </ContainerDashboard>
     </>
-  ) : (
-    <Navigate to="/" />
   )
 }
 
