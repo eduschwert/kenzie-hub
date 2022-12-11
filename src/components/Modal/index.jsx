@@ -3,8 +3,7 @@ import { TechContext } from "../../contexts/TechContext"
 
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
-import { techSchemaCreate } from "./techSchemaCreate"
-import { techSchemaEdit } from "./techSchemaEdit"
+import { techSchemaCreate, techSchemaEdit } from "./techSchema"
 
 import { STitle } from "../../styles/typography"
 import { SDivInputGroup } from "../../styles/form"
@@ -29,8 +28,9 @@ export const Modal = () => {
   })
 
   return (
-    <SDiv>
+    <SDiv id="modal-close">
       <form
+        id="modal-form"
         onSubmit={handleSubmit(
           modalChildren === "createTechnology"
             ? createTechnology

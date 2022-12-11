@@ -70,7 +70,7 @@ export const UserProvider = ({ children }) => {
       toast.success("Conta criada com sucesso!")
       navigate("/")
     } catch (error) {
-      toast.error("Ops! Algo deu errado")
+      toast.error("Email já está em uso")
     } finally {
       setLoading(false)
     }

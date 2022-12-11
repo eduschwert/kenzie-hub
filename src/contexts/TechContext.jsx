@@ -39,7 +39,7 @@ export const TechProvider = ({ children }) => {
       setModalOpen(false)
     } catch (error) {
       console.error(error.response.data.message)
-      toast.error(error.response.data.message)
+      toast.error("Você já tem uma tecnologia com este nome")
     } finally {
       setLoading(false)
     }
@@ -62,7 +62,7 @@ export const TechProvider = ({ children }) => {
       setModalOpen(false)
     } catch (error) {
       console.error(error.response.data.message)
-      toast.error(error.response.data.message)
+      toast.error("Ops, algo deu errado!")
     } finally {
       setLoading(false)
     }
@@ -86,7 +86,7 @@ export const TechProvider = ({ children }) => {
       setModalOpen(false)
     } catch (error) {
       console.error(error.response.data.message)
-      toast.error(error.response.data.message)
+      toast.error("Ops, algo deu errado!")
     } finally {
       setLocalLoading(false)
     }
