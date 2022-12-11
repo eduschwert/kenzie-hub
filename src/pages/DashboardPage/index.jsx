@@ -1,28 +1,26 @@
-import React from "react"
-import { useContext } from "react"
+import React, { useContext } from "react"
+import { TechContext } from "../../contexts/TechContext"
+import { UserContext } from "../../contexts/UserContext"
 
 import { AiOutlinePlus } from "react-icons/ai"
 
-import { UserContext } from "../../contexts/UserContext"
-
-import Modal from "../../components/Modal"
-
+import { Modal } from "../../components/Modal"
 import { ContainerDashboard } from "../../styles/Container"
 import { SHeader } from "../../styles/Header"
-import { SDiv, SDivUserInformationsBox } from "./style"
+import { SDiv, SDivUserInformationsBox, SUl } from "./style"
 import { SText, STitle } from "../../styles/typography"
 import { SButton } from "../../styles/Buttons"
-import { useState } from "react"
 
-const DashboardPage = () => {
-  const { logout, loading, user } = useContext(UserContext)
+export const DashboardPage = () => {
+  const { logout, user } = useContext(UserContext)
 
-  const [modal, setModal] = useState(true)
+  const { modalOpen, setModalOpen, setModalChildren, setCurrentTechID } =
+    useContext(TechContext)
 
-  console.log(user)
   return (
     <>
-      {modal && <Modal>oi</Modal>}
+      {modalOpen && <Modal />}
+
       <ContainerDashboard
         position="fixed"
         top="0"
@@ -45,11 +43,7 @@ const DashboardPage = () => {
         </SHeader>
       </ContainerDashboard>
       <SDivUserInformationsBox>
-        <ContainerDashboard
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-        >
+        <ContainerDashboard>
           <STitle
             tag="h2"
             fontSize="1.8rem"
@@ -78,7 +72,13 @@ const DashboardPage = () => {
           >
             Tecnologias
           </STitle>
-          <SButton buttontype="plus">
+          <SButton
+            onClick={() => {
+              setModalOpen(true)
+              setModalChildren("createTechnology")
+            }}
+            buttontype="plus"
+          >
             <AiOutlinePlus />
           </SButton>
         </SDiv>
@@ -96,13 +96,38 @@ const DashboardPage = () => {
             </STitle>
           </>
         ) : (
-          <>
-            <h1>Techs</h1>
-          </>
+          <SUl>
+            {user.techs.map((tech) => (
+              <li key={tech.id}>
+                <button
+                  onClick={() => {
+                    setModalOpen(true)
+                    setModalChildren(tech)
+                    setCurrentTechID(tech.id)
+                  }}
+                >
+                  <STitle
+                    tag="h5"
+                    fontSize="1.4rem"
+                    fontWeigth="700"
+                    color="var(--color-grey-0)"
+                  >
+                    {tech.title}
+                  </STitle>
+                  <SText
+                    tag="small"
+                    fontSize="1.2rem"
+                    fontWeigth="400"
+                    color="var(--color-grey-1)"
+                  >
+                    {tech.status}
+                  </SText>
+                </button>
+              </li>
+            ))}
+          </SUl>
         )}
       </ContainerDashboard>
     </>
   )
 }
-
-export default DashboardPage

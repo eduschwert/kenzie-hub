@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
 button{
     cursor: pointer;
-    min-width: max-content;
+   min-width: max-content;
 }
 
 body,button,input,select{
@@ -22,6 +22,10 @@ body{
 
 a{
     text-decoration: none;
+}
+
+ul{
+    list-style: none;
 }
 
 :root{

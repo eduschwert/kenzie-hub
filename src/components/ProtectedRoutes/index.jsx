@@ -5,7 +5,7 @@ import { Navigate, Outlet } from "react-router-dom"
 
 import { UserContext } from "../../contexts/UserContext"
 
-const ProtectedRoutes = () => {
+export const ProtectedRoutes = () => {
   const { user, loading } = useContext(UserContext)
 
   if (loading) {
@@ -13,5 +13,3 @@ const ProtectedRoutes = () => {
   }
   return user ? <Outlet /> : <Navigate to="/" />
 }
-
-export default ProtectedRoutes

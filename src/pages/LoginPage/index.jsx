@@ -1,23 +1,19 @@
-import React from "react"
-import { useContext } from "react"
+import React, { useContext } from "react"
+import { UserContext } from "../../contexts/UserContext"
 
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
-
 import { loginSchema } from "./loginSchema"
 
-import { UserContext } from "../../contexts/UserContext"
+import { TailSpin } from "react-loader-spinner"
 
 import { ContainerLogin } from "../../styles/Container"
 import { SText, STitle } from "../../styles/typography"
 import { SButton, SLink } from "../../styles/Buttons"
 import { SDivInputGroup, SFormBox } from "../../styles/form"
+import { Input } from "../../components/Input"
 
-import Input from "../../components/Input"
-
-import { TailSpin } from "react-loader-spinner"
-
-const LoginPage = () => {
+export const LoginPage = () => {
   const { login, loading } = useContext(UserContext)
 
   const {
@@ -137,5 +133,3 @@ const LoginPage = () => {
     </ContainerLogin>
   )
 }
-
-export default LoginPage

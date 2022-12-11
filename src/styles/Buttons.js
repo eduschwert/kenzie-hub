@@ -104,26 +104,46 @@ export const SLink = styled(Link)`
   margin-bottom: ${({ marginbottom }) => marginbottom};
 
   width: ${({ width }) => width};
-
   ${({ buttontype }) => {
-    if (buttontype === "primary") {
-      return css`
-        height: 4.8rem;
+    switch (buttontype) {
+      case "primary":
+        return css`
+          height: 4.8rem;
 
-        padding: 0 2.2rem;
+          padding: 0 2.2rem;
 
-        font-size: 1.6rem;
-        font-weight: 500;
-      `
-    } else if (buttontype === "secondary") {
-      return css`
-        height: 3.2rem;
+          font-size: 1.6rem;
+          font-weight: 500;
+        `
+      case "secondary":
+        return css`
+          height: 3.2rem;
 
-        padding: 0 1.6rem;
+          padding: 0 1.6rem;
 
-        font-size: 1.2rem;
-        font-weight: 600;
-      `
+          font-size: 1.2rem;
+          font-weight: 600;
+        `
+      case "plus":
+        return css`
+          width: 3.25rem;
+          height: 3.2rem;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          background-color: var(--color-grey-3);
+
+          &:hover {
+            background-color: var(--color-grey-2);
+          }
+
+          font-size: 1.2rem;
+          color: var(--color-white);
+        `
+
+      default:
     }
   }}
 

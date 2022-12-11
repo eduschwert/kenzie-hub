@@ -1,13 +1,42 @@
-import React from "react"
+import React, { useContext } from "react"
+import { TechContext } from "../../contexts/TechContext"
+
+import { yupResolver } from "@hookform/resolvers/yup"
+import { useForm } from "react-hook-form"
+import { techSchemaCreate } from "./techSchemaCreate"
+import { techSchemaEdit } from "./techSchemaEdit"
 
 import { STitle } from "../../styles/typography"
+import { SDivInputGroup } from "../../styles/form"
+import { SDiv, SButtonX } from "./style"
 
-import { ButtonX, SDiv } from "./style"
+import { CreateTechnology } from "./CreateTechnology"
+import { EditDeleteTechnology } from "./EditDeleteTechnology"
 
-const Modal = () => {
+export const Modal = () => {
+  const { createTechnology, editTechnology, setModalOpen, modalChildren } =
+    useContext(TechContext)
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(
+      modalChildren === "createTechnology" ? techSchemaCreate : techSchemaEdit
+    ),
+  })
+
   return (
     <SDiv>
-      <div>
+      <form
+        onSubmit={handleSubmit(
+          modalChildren === "createTechnology"
+            ? createTechnology
+            : editTechnology
+        )}
+      >
         <div>
           <STitle
             tag="h5"
@@ -17,12 +46,20 @@ const Modal = () => {
           >
             Nenhuma tecnologia cadastrada
           </STitle>
-          <ButtonX>X</ButtonX>
+          <SButtonX type="button" onClick={() => setModalOpen(false)}>
+            X
+          </SButtonX>
         </div>
-        <div></div>
-      </div>
+        <div>
+          <SDivInputGroup marginBottom="2rem">
+            {modalChildren === "createTechnology" ? (
+              <CreateTechnology register={register} errors={errors} />
+            ) : (
+              <EditDeleteTechnology register={register} errors={errors} />
+            )}
+          </SDivInputGroup>
+        </div>
+      </form>
     </SDiv>
   )
 }
-
-export default Modal

@@ -2,13 +2,13 @@ import React from "react"
 
 import { Routes, Route, Navigate } from "react-router-dom"
 
-import ProtectedRoutes from "../components/ProtectedRoutes"
+import { ProtectedRoutes } from "../components/ProtectedRoutes"
 
 import { TechProvider } from "../contexts/TechContext"
 
-import DashboardPage from "../pages/DashboardPage"
-import LoginPage from "../pages/LoginPage"
-import RegisterPage from "../pages/RegisterPage"
+import { DashboardPage } from "../pages/DashboardPage"
+import { LoginPage } from "../pages/LoginPage"
+import { RegisterPage } from "../pages/RegisterPage"
 
 const RoutesMain = () => {
   return (

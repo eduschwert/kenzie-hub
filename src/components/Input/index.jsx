@@ -2,7 +2,7 @@ import React from "react"
 
 import { SInput } from "./style.js"
 
-const Input = ({ id, label, type, placeholder, register, disabled }) => {
+export const Input = ({ id, label, type, placeholder, register, disabled }) => {
   return (
     <SInput>
       <label htmlFor={id}>{label}</label>
@@ -16,5 +16,3 @@ const Input = ({ id, label, type, placeholder, register, disabled }) => {
     </SInput>
   )
 }
-
-export default Input

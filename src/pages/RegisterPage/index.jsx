@@ -1,5 +1,5 @@
-import React from "react"
-import { useContext } from "react"
+import React, { useContext } from "react"
+import { UserContext } from "../../contexts/UserContext"
 
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -12,13 +12,10 @@ import { SText, STitle } from "../../styles/typography"
 import { SButton, SLink } from "../../styles/Buttons"
 import { SDivInputGroup, SFormBox } from "../../styles/form"
 import { SHeader } from "../../styles/Header"
-import { SSelect } from "./style"
+import { Select } from "../../components/Select"
+import { Input } from "../../components/Input"
 
-import Input from "../../components/Input"
-
-import { UserContext } from "../../contexts/UserContext"
-
-const RegisterPage = () => {
+export const RegisterPage = () => {
   const { loading, register: registerSubmit } = useContext(UserContext)
 
   const {
@@ -191,28 +188,29 @@ const RegisterPage = () => {
               {errors.contact.message}
             </SText>
           )}
-          <SSelect>
-            <label htmlFor="course_module">Selecionar módulo</label>
-            <select
-              id="course_module"
-              {...register("course_module")}
-              disabled={loading}
-            >
-              <option value="">Selecionar módulo</option>
-              <option value="Primeiro módulo (Introdução ao Frontend)">
-                Primeiro módulo
-              </option>
-              <option value="Segundo módulo (Frontend avançado)">
-                Segundo módulo
-              </option>
-              <option value="Terceiro módulo (Introdução ao Backend)">
-                Terceiro módulo
-              </option>
-              <option value="Quarto módulo (Backend avançado)">
-                Quarto módulo
-              </option>
-            </select>
-          </SSelect>
+          <Select
+            label="Selecionar módulo"
+            id="course_module"
+            register={register("course_module")}
+            disabled={loading}
+            options={
+              <>
+                <option value="">Selecionar módulo</option>
+                <option value="Primeiro módulo (Introdução ao Frontend)">
+                  Primeiro módulo
+                </option>
+                <option value="Segundo módulo (Frontend avançado)">
+                  Segundo módulo
+                </option>
+                <option value="Terceiro módulo (Introdução ao Backend)">
+                  Terceiro módulo
+                </option>
+                <option value="Quarto módulo (Backend avançado)">
+                  Quarto módulo
+                </option>
+              </>
+            }
+          />
           {errors.course_module && (
             <SText
               tag="p"
@@ -249,5 +247,3 @@ const RegisterPage = () => {
     </ContainerRegister>
   )
 }
-
-export default RegisterPage
