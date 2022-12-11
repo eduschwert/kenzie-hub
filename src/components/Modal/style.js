@@ -8,8 +8,11 @@ export const SDiv = styled.div`
 
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 
   position: fixed;
+  top: 0;
+  z-index: 99;
 
   form {
     width: 39.3rem;
@@ -17,7 +20,8 @@ export const SDiv = styled.div`
 
     padding: 0 1.2rem;
 
-    margin-top: 11.7rem;
+    position: absolute;
+    top: 20%;
 
     animation: animateModal 0.3s;
 
