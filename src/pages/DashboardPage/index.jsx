@@ -2,6 +2,8 @@ import React, { useContext } from "react"
 import { TechContext } from "../../contexts/TechContext"
 import { UserContext } from "../../contexts/UserContext"
 
+import { motion } from "framer-motion"
+
 import { AiOutlinePlus } from "react-icons/ai"
 
 import { Modal } from "../../components/Modal"
@@ -18,7 +20,11 @@ export const DashboardPage = () => {
     useContext(TechContext)
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+    >
       {modalOpen && <Modal />}
 
       <ContainerDashboard
@@ -128,6 +134,6 @@ export const DashboardPage = () => {
           </SUl>
         )}
       </ContainerDashboard>
-    </>
+    </motion.div>
   )
 }
