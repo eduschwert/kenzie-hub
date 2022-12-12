@@ -18,7 +18,8 @@ import { Select } from "../../components/Select"
 import { Input } from "../../components/Input"
 
 export const RegisterPage = () => {
-  const { loading, register: registerSubmit } = useContext(UserContext)
+  const { loadingLoginRegister: loading, register: registerSubmit } =
+    useContext(UserContext)
 
   const {
     register,

@@ -3,6 +3,7 @@ import React from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
 
 import { ProtectedRoutes } from "../components/ProtectedRoutes"
+import { Autologin } from "../components/Autologin"
 
 import { TechProvider } from "../contexts/TechContext"
 
@@ -13,9 +14,10 @@ import { RegisterPage } from "../pages/RegisterPage"
 const RoutesMain = () => {
   return (
     <Routes>
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/" element={<LoginPage />} />
-
+      <Route element={<Autologin />}>
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/" element={<LoginPage />} />
+      </Route>
       <Route element={<ProtectedRoutes />}>
         <Route
           path="/dashboard"
@@ -26,7 +28,6 @@ const RoutesMain = () => {
           }
         />
       </Route>
-
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   )

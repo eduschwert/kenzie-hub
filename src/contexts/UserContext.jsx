@@ -12,6 +12,8 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
 
+  const [loadingLoginRegister, setLoadingLoginRegister] = useState(false)
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -45,8 +47,7 @@ export const UserProvider = ({ children }) => {
 
   const login = async (formData) => {
     try {
-      setLoading(true)
-
+      setLoadingLoginRegister(true)
       const response = await api.post("sessions", formData)
 
       setUser(response.data.user)
@@ -54,25 +55,23 @@ export const UserProvider = ({ children }) => {
       localStorage.setItem("@USERID", response.data.user.id)
 
       toast.success("Login efetuado com sucesso!")
-
-      navigate("/dashboard")
     } catch (error) {
       toast.error("Email ou senha incorretos")
     } finally {
-      setLoading(false)
+      setLoadingLoginRegister(false)
     }
   }
 
   const register = async (formData) => {
     try {
-      setLoading(true)
+      setLoadingLoginRegister(true)
       await api.post("users", formData)
       toast.success("Conta criada com sucesso!")
       navigate("/")
     } catch (error) {
       toast.error("Email já está em uso")
     } finally {
-      setLoading(false)
+      setLoadingLoginRegister(false)
     }
   }
 
@@ -85,7 +84,16 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ user, setUser, loading, setLoading, login, register, logout }}
+      value={{
+        user,
+        setUser,
+        loading,
+        setLoading,
+        login,
+        register,
+        logout,
+        loadingLoginRegister,
+      }}
     >
       {children}
     </UserContext.Provider>

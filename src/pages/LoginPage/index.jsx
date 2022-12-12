@@ -16,7 +16,7 @@ import { SDivInputGroup, SFormBox } from "../../styles/form"
 import { Input } from "../../components/Input"
 
 export const LoginPage = () => {
-  const { login, loading } = useContext(UserContext)
+  const { login, loadingLoginRegister: loading } = useContext(UserContext)
 
   const {
     register,
