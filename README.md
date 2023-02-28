@@ -1,6 +1,6 @@
 <h1 align="center">Kenzie Hub</h1>
 
-<p align="center"><img width="800" alt="ilustração" src="./src/assets/project-illustration.gif"/></p>
+<p align="center"><img width="600" alt="ilustração" src="./src/assets/project-illustration.gif"/></p>
 
 <h3 align="center">Plataforma para desenvolvedores estudantes da <a href="https://kenzie.com.br/">Kenzie Academy</a>, onde permite os mesmos organizarem suas aptidões e habilidades nas tecnologias estudadas no momento e no módulo atual que estão. Foi utilizada a API <a href="https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api">Kenzie-Hub-API</a></h3>
 
