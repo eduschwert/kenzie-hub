@@ -6,7 +6,7 @@
 
 <h4 align="center">Status do projeto: 🚧   Concluído 🚀 🚧</h4>
 
-<h4 align="center">Deploy da aplicação: <a href="https://s3-14-entrega-projeto-kenziehub-cadastroelogin-eduschwert.vercel.app/">Vercel</a></h4>
+<h4 align="center">Deploy da aplicação: <a href="https://kenzie-hub-ten-ebon.vercel.app/">Vercel</a></h4>
 
 <h3>Features</h3>
 
