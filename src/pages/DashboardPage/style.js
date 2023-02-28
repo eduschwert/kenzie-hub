@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SDivUserInformationsBox = styled.div`
   border-top: 0.1rem solid var(--color-grey-1);
@@ -24,7 +24,7 @@ export const SDivUserInformationsBox = styled.div`
       align-items: center;
     }
   }
-`
+`;
 
 export const SDiv = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ export const SDiv = styled.div`
   align-items: center;
 
   margin-bottom: 2rem;
-`
+`;
 export const SUl = styled.ul`
   background-color: var(--color-grey-3);
 
@@ -80,4 +80,4 @@ export const SUl = styled.ul`
   button:hover small {
     color: var(--color-grey-0);
   }
-`
+`;

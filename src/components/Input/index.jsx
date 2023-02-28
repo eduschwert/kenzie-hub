@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { SInput } from "./style.js"
+import { SInput } from "./style.js";
 
 export const Input = ({ id, label, type, placeholder, register, disabled }) => {
   return (
@@ -14,5 +14,5 @@ export const Input = ({ id, label, type, placeholder, register, disabled }) => {
         {...register}
       />
     </SInput>
-  )
-}
+  );
+};

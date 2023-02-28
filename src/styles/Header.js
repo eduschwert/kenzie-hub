@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SHeader = styled.header`
   width: 100%;
@@ -16,4 +16,4 @@ export const SHeader = styled.header`
   max-width: ${({ maxWidth }) => maxWidth};
 
   height: ${({ height }) => height};
-`
+`;

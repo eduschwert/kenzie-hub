@@ -1,25 +1,25 @@
-import React, { useContext } from "react"
-import { UserContext } from "../../contexts/UserContext"
+import React, { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
-import { useForm } from "react-hook-form"
-import { yupResolver } from "@hookform/resolvers/yup"
-import { registerSchema } from "./registerSchema"
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { registerSchema } from "./registerSchema";
 
-import { TailSpin } from "react-loader-spinner"
+import { TailSpin } from "react-loader-spinner";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-import { ContainerRegister } from "../../styles/Container"
-import { SText, STitle } from "../../styles/typography"
-import { SButton, SLink } from "../../styles/Buttons"
-import { SDivInputGroup, SFormBox } from "../../styles/form"
-import { SHeader } from "../../styles/Header"
-import { Select } from "../../components/Select"
-import { Input } from "../../components/Input"
+import { ContainerRegister } from "../../styles/Container";
+import { SText, STitle } from "../../styles/typography";
+import { SButton, SLink } from "../../styles/Buttons";
+import { SDivInputGroup, SFormBox } from "../../styles/form";
+import { SHeader } from "../../styles/Header";
+import { Select } from "../../components/Select";
+import { Input } from "../../components/Input";
 
 export const RegisterPage = () => {
   const { loadingLoginRegister: loading, register: registerSubmit } =
-    useContext(UserContext)
+    useContext(UserContext);
 
   const {
     register,
@@ -28,7 +28,7 @@ export const RegisterPage = () => {
   } = useForm({
     mode: "onBlur",
     resolver: yupResolver(registerSchema),
-  })
+  });
 
   return (
     <motion.div
@@ -254,5 +254,5 @@ export const RegisterPage = () => {
         </SFormBox>
       </ContainerRegister>
     </motion.div>
-  )
-}
+  );
+};

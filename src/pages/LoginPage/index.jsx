@@ -1,22 +1,22 @@
-import React, { useContext } from "react"
-import { UserContext } from "../../contexts/UserContext"
+import React, { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
-import { useForm } from "react-hook-form"
-import { yupResolver } from "@hookform/resolvers/yup"
-import { loginSchema } from "./loginSchema"
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { loginSchema } from "./loginSchema";
 
-import { TailSpin } from "react-loader-spinner"
+import { TailSpin } from "react-loader-spinner";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-import { ContainerLogin } from "../../styles/Container"
-import { SText, STitle } from "../../styles/typography"
-import { SButton, SLink } from "../../styles/Buttons"
-import { SDivInputGroup, SFormBox } from "../../styles/form"
-import { Input } from "../../components/Input"
+import { ContainerLogin } from "../../styles/Container";
+import { SText, STitle } from "../../styles/typography";
+import { SButton, SLink } from "../../styles/Buttons";
+import { SDivInputGroup, SFormBox } from "../../styles/form";
+import { Input } from "../../components/Input";
 
 export const LoginPage = () => {
-  const { login, loadingLoginRegister: loading } = useContext(UserContext)
+  const { login, loadingLoginRegister: loading } = useContext(UserContext);
 
   const {
     register,
@@ -25,7 +25,7 @@ export const LoginPage = () => {
   } = useForm({
     mode: "onBlur",
     resolver: yupResolver(loginSchema),
-  })
+  });
 
   return (
     <motion.div
@@ -139,5 +139,5 @@ export const LoginPage = () => {
         </SFormBox>
       </ContainerLogin>
     </motion.div>
-  )
-}
+  );
+};

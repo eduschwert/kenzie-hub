@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components"
+import styled, { css } from "styled-components";
 
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export const SButton = styled.button`
   border: none;
@@ -22,7 +22,7 @@ export const SButton = styled.button`
 
           font-size: 1.6rem;
           font-weight: 500;
-        `
+        `;
       case "secondary":
         return css`
           height: 3.2rem;
@@ -31,7 +31,7 @@ export const SButton = styled.button`
 
           font-size: 1.2rem;
           font-weight: 600;
-        `
+        `;
       case "plus":
         return css`
           width: 3.25rem;
@@ -49,7 +49,7 @@ export const SButton = styled.button`
 
           font-size: 1.2rem;
           color: var(--color-white);
-        `
+        `;
 
       default:
     }
@@ -68,7 +68,7 @@ export const SButton = styled.button`
           &:disabled {
             background-color: var(--color-primary-negative);
           }
-        `
+        `;
       case "grey-1":
         return css`
           background-color: var(--color-grey-1);
@@ -77,7 +77,7 @@ export const SButton = styled.button`
           &:hover {
             background: var(--color-grey-2);
           }
-        `
+        `;
       case "grey-3":
         return css`
           background-color: var(--color-grey-3);
@@ -86,11 +86,11 @@ export const SButton = styled.button`
           &:hover {
             background-color: var(--color-grey-2);
           }
-        `
+        `;
       default:
     }
   }}
-`
+`;
 export const SLink = styled(Link)`
   border: none;
   border-radius: var(--radius-1);
@@ -114,7 +114,7 @@ export const SLink = styled(Link)`
 
           font-size: 1.6rem;
           font-weight: 500;
-        `
+        `;
       case "secondary":
         return css`
           height: 3.2rem;
@@ -123,7 +123,7 @@ export const SLink = styled(Link)`
 
           font-size: 1.2rem;
           font-weight: 600;
-        `
+        `;
       case "plus":
         return css`
           width: 3.25rem;
@@ -141,7 +141,7 @@ export const SLink = styled(Link)`
 
           font-size: 1.2rem;
           color: var(--color-white);
-        `
+        `;
 
       default:
     }
@@ -160,7 +160,7 @@ export const SLink = styled(Link)`
           &:disabled {
             background-color: var(--color-primary-negative);
           }
-        `
+        `;
       case "grey-1":
         return css`
           background-color: var(--color-grey-1);
@@ -169,7 +169,7 @@ export const SLink = styled(Link)`
           &:hover {
             background: var(--color-grey-2);
           }
-        `
+        `;
       case "grey-3":
         return css`
           background-color: var(--color-grey-3);
@@ -178,8 +178,8 @@ export const SLink = styled(Link)`
           &:hover {
             background-color: var(--color-grey-2);
           }
-        `
+        `;
       default:
     }
   }}
-`
+`;

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SDiv = styled.div`
   width: 100%;
@@ -12,4 +12,4 @@ export const SDiv = styled.div`
   @media (min-width: 325px) {
     flex-direction: row;
   }
-`
+`;

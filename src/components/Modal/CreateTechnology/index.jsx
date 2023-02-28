@@ -1,15 +1,15 @@
-import React, { useContext } from "react"
-import { TechContext } from "../../../contexts/TechContext"
+import React, { useContext } from "react";
+import { TechContext } from "../../../contexts/TechContext";
 
-import { TailSpin } from "react-loader-spinner"
+import { TailSpin } from "react-loader-spinner";
 
-import { SButton } from "../../../styles/Buttons"
-import { SText } from "../../../styles/typography"
-import { Input } from "../../Input"
-import { Select } from "../../Select"
+import { SButton } from "../../../styles/Buttons";
+import { SText } from "../../../styles/typography";
+import { Input } from "../../Input";
+import { Select } from "../../Select";
 
 export const CreateTechnology = ({ register, errors }) => {
-  const { loading } = useContext(TechContext)
+  const { loading } = useContext(TechContext);
 
   return (
     <>
@@ -79,5 +79,5 @@ export const CreateTechnology = ({ register, errors }) => {
         {!loading && "Cadastrar Tecnologia"}
       </SButton>
     </>
-  )
-}
+  );
+};

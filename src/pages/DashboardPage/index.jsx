@@ -1,23 +1,23 @@
-import React, { useContext } from "react"
-import { TechContext } from "../../contexts/TechContext"
-import { UserContext } from "../../contexts/UserContext"
+import React, { useContext } from "react";
+import { TechContext } from "../../contexts/TechContext";
+import { UserContext } from "../../contexts/UserContext";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-import { AiOutlinePlus } from "react-icons/ai"
+import { AiOutlinePlus } from "react-icons/ai";
 
-import { Modal } from "../../components/Modal"
-import { ContainerDashboard } from "../../styles/Container"
-import { SHeader } from "../../styles/Header"
-import { SDiv, SDivUserInformationsBox, SUl } from "./style"
-import { SText, STitle } from "../../styles/typography"
-import { SButton } from "../../styles/Buttons"
+import { Modal } from "../../components/Modal";
+import { ContainerDashboard } from "../../styles/Container";
+import { SHeader } from "../../styles/Header";
+import { SDiv, SDivUserInformationsBox, SUl } from "./style";
+import { SText, STitle } from "../../styles/typography";
+import { SButton } from "../../styles/Buttons";
 
 export const DashboardPage = () => {
-  const { logout, user } = useContext(UserContext)
+  const { logout, user } = useContext(UserContext);
 
   const { modalOpen, setModalOpen, setModalChildren, setCurrentTechID } =
-    useContext(TechContext)
+    useContext(TechContext);
 
   return (
     <motion.div
@@ -80,8 +80,8 @@ export const DashboardPage = () => {
           </STitle>
           <SButton
             onClick={() => {
-              setModalOpen(true)
-              setModalChildren("createTechnology")
+              setModalOpen(true);
+              setModalChildren("createTechnology");
             }}
             buttontype="plus"
           >
@@ -107,9 +107,9 @@ export const DashboardPage = () => {
               <li key={tech.id}>
                 <button
                   onClick={() => {
-                    setModalOpen(true)
-                    setModalChildren(tech)
-                    setCurrentTechID(tech.id)
+                    setModalOpen(true);
+                    setModalChildren(tech);
+                    setCurrentTechID(tech.id);
                   }}
                 >
                   <STitle
@@ -135,5 +135,5 @@ export const DashboardPage = () => {
         )}
       </ContainerDashboard>
     </motion.div>
-  )
-}
+  );
+};

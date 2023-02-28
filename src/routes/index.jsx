@@ -1,15 +1,15 @@
-import React from "react"
+import React from "react";
 
-import { Routes, Route, Navigate } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom";
 
-import { ProtectedRoutes } from "../components/ProtectedRoutes"
-import { Autologin } from "../components/Autologin"
+import { ProtectedRoutes } from "../components/ProtectedRoutes";
+import { Autologin } from "../components/Autologin";
 
-import { TechProvider } from "../contexts/TechContext"
+import { TechProvider } from "../contexts/TechContext";
 
-import { DashboardPage } from "../pages/DashboardPage"
-import { LoginPage } from "../pages/LoginPage"
-import { RegisterPage } from "../pages/RegisterPage"
+import { DashboardPage } from "../pages/DashboardPage";
+import { LoginPage } from "../pages/LoginPage";
+import { RegisterPage } from "../pages/RegisterPage";
 
 const RoutesMain = () => {
   return (
@@ -30,7 +30,7 @@ const RoutesMain = () => {
       </Route>
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
-  )
-}
+  );
+};
 
-export default RoutesMain
+export default RoutesMain;

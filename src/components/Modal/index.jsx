@@ -1,20 +1,20 @@
-import React, { useContext } from "react"
-import { TechContext } from "../../contexts/TechContext"
+import React, { useContext } from "react";
+import { TechContext } from "../../contexts/TechContext";
 
-import { yupResolver } from "@hookform/resolvers/yup"
-import { useForm } from "react-hook-form"
-import { techSchemaCreate, techSchemaEdit } from "./techSchema"
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { techSchemaCreate, techSchemaEdit } from "./techSchema";
 
-import { STitle } from "../../styles/typography"
-import { SDivInputGroup } from "../../styles/form"
-import { SDiv, SButtonX } from "./style"
+import { STitle } from "../../styles/typography";
+import { SDivInputGroup } from "../../styles/form";
+import { SDiv, SButtonX } from "./style";
 
-import { CreateTechnology } from "./CreateTechnology"
-import { EditDeleteTechnology } from "./EditDeleteTechnology"
+import { CreateTechnology } from "./CreateTechnology";
+import { EditDeleteTechnology } from "./EditDeleteTechnology";
 
 export const Modal = () => {
   const { createTechnology, editTechnology, setModalOpen, modalChildren } =
-    useContext(TechContext)
+    useContext(TechContext);
 
   const {
     register,
@@ -25,7 +25,7 @@ export const Modal = () => {
     resolver: yupResolver(
       modalChildren === "createTechnology" ? techSchemaCreate : techSchemaEdit
     ),
-  })
+  });
 
   return (
     <SDiv id="modal-close">
@@ -61,5 +61,5 @@ export const Modal = () => {
         </div>
       </form>
     </SDiv>
-  )
-}
+  );
+};

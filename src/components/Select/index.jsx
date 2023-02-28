@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { SSelect } from "./style.js"
+import { SSelect } from "./style.js";
 
 export const Select = ({ id, label, register, disabled, options }) => {
   return (
@@ -10,5 +10,5 @@ export const Select = ({ id, label, register, disabled, options }) => {
         {options}
       </select>
     </SSelect>
-  )
-}
+  );
+};

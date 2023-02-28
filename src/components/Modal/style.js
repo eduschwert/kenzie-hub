@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SDiv = styled.div`
   background-color: rgba(18, 18, 20, 0.5);
@@ -66,7 +66,7 @@ export const SDiv = styled.div`
 
     border-radius: 0 0 var(--radius-1) var(--radius-1);
   }
-`
+`;
 
 export const SButtonX = styled.button`
   background: none;
@@ -76,4 +76,4 @@ export const SButtonX = styled.button`
   font-weight: 600;
   font-size: 1.6rem;
   color: var(--color-grey-1);
-`
+`;

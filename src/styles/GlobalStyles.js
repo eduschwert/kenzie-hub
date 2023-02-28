@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -57,6 +57,6 @@ ul{
         font-size: 62.5%;
     }
 }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

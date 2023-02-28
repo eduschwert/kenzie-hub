@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SFormBox = styled.form`
   width: 100%;
@@ -18,7 +18,7 @@ export const SFormBox = styled.form`
   }
 
   margin: 2rem 0;
-`
+`;
 
 export const SDivInputGroup = styled.div`
   width: 100%;
@@ -28,4 +28,4 @@ export const SDivInputGroup = styled.div`
   gap: 2.6rem;
 
   margin-bottom: ${({ marginBottom }) => marginBottom};
-`
+`;

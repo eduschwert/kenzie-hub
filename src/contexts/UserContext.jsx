@@ -1,26 +1,26 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react";
 
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
-import { api } from "../services"
+import { api } from "../services";
 
-export const UserContext = createContext({})
+export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const [loadingLoginRegister, setLoadingLoginRegister] = useState(false)
+  const [loadingLoginRegister, setLoadingLoginRegister] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("@TOKEN")
+    const token = localStorage.getItem("@TOKEN");
     if (!token) {
-      setLoading(false)
-      return
+      setLoading(false);
+      return;
     }
     const loadUser = async () => {
       try {
@@ -28,59 +28,60 @@ export const UserProvider = ({ children }) => {
           headers: {
             authorization: `Bearer ${token}`,
           },
-        })
-        setUser(data)
+        });
+        setUser(data);
       } catch (error) {
-        console.error(error)
-        localStorage.removeItem("@TOKEN")
+        console.error(error);
+        localStorage.removeItem("@TOKEN");
 
-        const userID = localStorage.getItem("@USERID")
+        const userID = localStorage.getItem("@USERID");
         if (userID) {
-          localStorage.removeItem("@USERID")
+          localStorage.removeItem("@USERID");
         }
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
-    loadUser()
-  }, [])
+    };
+    loadUser();
+  }, []);
 
   const login = async (formData) => {
     try {
-      setLoadingLoginRegister(true)
-      const response = await api.post("sessions", formData)
+      setLoadingLoginRegister(true);
+      const response = await api.post("sessions", formData);
 
-      setUser(response.data.user)
-      localStorage.setItem("@TOKEN", response.data.token)
-      localStorage.setItem("@USERID", response.data.user.id)
+      setUser(response.data.user);
+      localStorage.setItem("@TOKEN", response.data.token);
+      localStorage.setItem("@USERID", response.data.user.id);
 
-      toast.success("Login efetuado com sucesso!")
+      toast.success("Login efetuado com sucesso!");
     } catch (error) {
-      toast.error("Email ou senha incorretos")
+      toast.error("Email ou senha incorretos");
     } finally {
-      setLoadingLoginRegister(false)
+      setLoadingLoginRegister(false);
     }
-  }
+  };
 
   const register = async (formData) => {
     try {
-      setLoadingLoginRegister(true)
-      await api.post("users", formData)
-      toast.success("Conta criada com sucesso!")
-      navigate("/")
+      setLoadingLoginRegister(true);
+      await api.post("users", formData);
+      toast.success("Conta criada com sucesso!");
+      navigate("/");
     } catch (error) {
-      toast.error("Email já está em uso")
+      toast.error("Email já está em uso");
     } finally {
-      setLoadingLoginRegister(false)
+      setLoadingLoginRegister(false);
     }
-  }
+  };
 
   const logout = () => {
-    localStorage.removeItem("@TOKEN")
-    localStorage.removeItem("@USERID")
-    setUser(null)
-    navigate("/")
-  }
+    localStorage.removeItem("@TOKEN");
+    localStorage.removeItem("@USERID");
+    setUser(null);
+    toast.success("Logout realizado com sucesso!");
+    navigate("/");
+  };
 
   return (
     <UserContext.Provider
@@ -97,5 +98,5 @@ export const UserProvider = ({ children }) => {
     >
       {children}
     </UserContext.Provider>
-  )
-}
+  );
+};

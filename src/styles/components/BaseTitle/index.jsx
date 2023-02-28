@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const BaseTitle = ({ tag, className, children }) => {
   return (
@@ -10,7 +10,7 @@ const BaseTitle = ({ tag, className, children }) => {
       {tag === "h5" && <h5 className={className}>{children}</h5>}
       {tag === "h6" && <h6 className={className}>{children}</h6>}
     </>
-  )
-}
+  );
+};
 
-export default BaseTitle
+export default BaseTitle;

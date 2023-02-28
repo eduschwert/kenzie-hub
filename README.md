@@ -1,5 +1,7 @@
 <h1 align="center">Kenzie Hub</h1>
 
+<p align="center"><img width="800" alt="ilustração" src="./src/assets/project-illustration.gif"/></p>
+
 <h3 align="center">Plataforma para desenvolvedores estudantes da <a href="https://kenzie.com.br/">Kenzie Academy</a>, onde permite os mesmos organizarem suas aptidões e habilidades nas tecnologias estudadas no momento e no módulo atual que estão. Foi utilizada a API <a href="https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api">Kenzie-Hub-API</a></h3>
 
 <h4 align="center">Status do projeto: 🚧   Concluído 🚀 🚧</h4>
@@ -11,7 +13,6 @@
 - [x] Cadastro de desenvolvedor
 - [x] AutoLogin
 - [x] Criar, editar e excluir tecnologias do desenvolvedor
-
 
 <h3>Pré-requisitos</h3>
 

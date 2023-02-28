@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Container = styled.div`
   max-width: 100%;
@@ -6,7 +6,7 @@ const Container = styled.div`
   margin: 0 auto;
 
   padding: 0 1.2rem;
-`
+`;
 
 export const ContainerRegister = styled(Container)`
   width: 39.5rem;
@@ -18,7 +18,7 @@ export const ContainerRegister = styled(Container)`
     flex-direction: column;
     justify-content: center;
   }
-`
+`;
 
 export const ContainerLogin = styled(Container)`
   width: 39.5rem;
@@ -28,7 +28,7 @@ export const ContainerLogin = styled(Container)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`
+`;
 
 export const ContainerDashboard = styled(Container)`
   width: 80rem;
@@ -44,4 +44,4 @@ export const ContainerDashboard = styled(Container)`
   height: ${({ height }) => height};
 
   background-color: ${({ backgroundColor }) => backgroundColor};
-`
+`;

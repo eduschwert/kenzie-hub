@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const BaseText = ({ tag, className, children }) => {
   return (
@@ -7,7 +7,7 @@ const BaseText = ({ tag, className, children }) => {
       {tag === "span" && <span className={className}>{children}</span>}
       {tag === "small" && <small className={className}>{children}</small>}
     </>
-  )
-}
+  );
+};
 
-export default BaseText
+export default BaseText;

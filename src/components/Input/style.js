@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SInput = styled.fieldset`
   width: 100%;
@@ -44,4 +44,4 @@ export const SInput = styled.fieldset`
   input:focus {
     border: 0.12rem solid var(--color-grey-0);
   }
-`
+`;

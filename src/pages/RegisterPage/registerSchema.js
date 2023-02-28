@@ -1,4 +1,4 @@
-import * as yup from "yup"
+import * as yup from "yup";
 
 export const registerSchema = yup.object().shape({
   name: yup
@@ -29,4 +29,4 @@ export const registerSchema = yup.object().shape({
   bio: yup.string().required("A biografia é obrigatória!"),
   contact: yup.string().required("Número de contato é obrigatório!"),
   course_module: yup.string().required("A seleção do módulo é obrigatória!"),
-})
+});

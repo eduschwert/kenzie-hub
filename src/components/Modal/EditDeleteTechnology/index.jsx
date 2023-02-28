@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react"
-import { TechContext } from "../../../contexts/TechContext"
+import React, { useContext, useState } from "react";
+import { TechContext } from "../../../contexts/TechContext";
 
-import { TailSpin } from "react-loader-spinner"
+import { TailSpin } from "react-loader-spinner";
 
-import { SButton } from "../../../styles/Buttons"
-import { SText } from "../../../styles/typography"
-import { Input } from "../../Input"
-import { Select } from "../../Select"
-import { SDiv } from "./style"
+import { SButton } from "../../../styles/Buttons";
+import { SText } from "../../../styles/typography";
+import { Input } from "../../Input";
+import { Select } from "../../Select";
+import { SDiv } from "./style";
 
 export const EditDeleteTechnology = ({ register, errors }) => {
   const {
@@ -15,9 +15,9 @@ export const EditDeleteTechnology = ({ register, errors }) => {
     modalChildren: tech,
     setCurrentTechID,
     deleteTechnology,
-  } = useContext(TechContext)
+  } = useContext(TechContext);
 
-  const [localLoading, setLocalLoading] = useState(false)
+  const [localLoading, setLocalLoading] = useState(false);
 
   return (
     <>
@@ -75,8 +75,8 @@ export const EditDeleteTechnology = ({ register, errors }) => {
         </SButton>
         <SButton
           onClick={() => {
-            setCurrentTechID(tech.id)
-            deleteTechnology(setLocalLoading)
+            setCurrentTechID(tech.id);
+            deleteTechnology(setLocalLoading);
           }}
           type="button"
           disabled={localLoading}
@@ -98,5 +98,5 @@ export const EditDeleteTechnology = ({ register, errors }) => {
         </SButton>
       </SDiv>
     </>
-  )
-}
+  );
+};

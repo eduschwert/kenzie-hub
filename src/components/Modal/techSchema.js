@@ -1,4 +1,4 @@
-import * as yup from "yup"
+import * as yup from "yup";
 
 export const techSchemaCreate = yup.object().shape({
   title: yup
@@ -6,8 +6,8 @@ export const techSchemaCreate = yup.object().shape({
     .required("O nome é obrigatório!")
     .max(200, "O nome pode ter no máximo 200 caracteres."),
   status: yup.string().required("O status é obrigatório!"),
-})
+});
 
 export const techSchemaEdit = yup.object().shape({
   status: yup.string().required("O status é obrigatório!"),
-})
+});

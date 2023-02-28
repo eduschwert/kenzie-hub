@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SSelect = styled.fieldset`
   width: 100%;
@@ -44,4 +44,4 @@ export const SSelect = styled.fieldset`
   select:focus {
     border: 0.12rem solid var(--color-grey-0);
   }
-`
+`;

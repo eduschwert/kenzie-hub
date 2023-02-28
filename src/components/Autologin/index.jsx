@@ -1,15 +1,15 @@
-import React from "react"
-import { useContext } from "react"
+import React from "react";
+import { useContext } from "react";
 
-import { Navigate, Outlet } from "react-router-dom"
+import { Navigate, Outlet } from "react-router-dom";
 
-import { UserContext } from "../../contexts/UserContext"
+import { UserContext } from "../../contexts/UserContext";
 
 export const Autologin = () => {
-  const { user, loading } = useContext(UserContext)
+  const { user, loading } = useContext(UserContext);
 
   if (loading) {
-    return null
+    return null;
   }
-  return !user ? <Outlet /> : <Navigate to="/dashboard" />
-}
+  return !user ? <Outlet /> : <Navigate to="/dashboard" />;
+};
