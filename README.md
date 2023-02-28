@@ -43,7 +43,6 @@ $ yarn start
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - [React](https://pt-br.reactjs.org/)
-- [Typescript](https://www.typescriptlang.org/)
 - [Styled-Components](https://styled-components.com/)
 - [Yup](https://www.npmjs.com/package/yup/)
 - [React Hook Form](https://react-hook-form.com/)
