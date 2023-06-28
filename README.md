@@ -2,7 +2,7 @@
 
 <p align="center"><img width="600" alt="ilustração" src="./src/assets/project-illustration.gif"/></p>
 
-<h3 align="center">Plataforma para desenvolvedores estudantes da <a href="https://kenzie.com.br/">Kenzie Academy</a>, onde permite os mesmos organizarem suas aptidões e habilidades nas tecnologias estudadas no momento e no módulo atual que estão. Foi utilizada a API <a href="https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api">Kenzie-Hub-API</a></h3>
+<h3 align="center">Plataforma para estudantes da <a href="https://kenzie.com.br/">Kenzie Academy</a>, onde eles podem organizar suas aptidões e habilidades nas tecnologias que estão estudando no momento, durante o módulo atual. A plataforma utiliza a API <a href="https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api">Kenzie-Hub-API</a></h3>
 
 <h4 align="center">Status do projeto: 🚧   Concluído 🚀 🚧</h4>
 
